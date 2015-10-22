@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5384E651BD10B4200CABA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5384E631BD10B4200CABA55 /* Main.storyboard */; };
+		F5D248D81BCFCD0500039E0D /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D248D71BCFCD0500039E0D /* CustomAnnotation.swift */; };
+		F5D7765A1BD8D6FF001FFD5C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776581BD8D6FF001FFD5C /* Bolts.framework */; };
+		F5D7765B1BD8D6FF001FFD5C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776591BD8D6FF001FFD5C /* Parse.framework */; };
+		F5D7765D1BD8D7CA001FFD5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7765C1BD8D7CA001FFD5C /* AudioToolbox.framework */; };
+		F5D7765F1BD8D7DD001FFD5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7765E1BD8D7DD001FFD5C /* CFNetwork.framework */; };
+		F5D776611BD8D7E6001FFD5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776601BD8D7E6001FFD5C /* CoreGraphics.framework */; };
+		F5D776631BD8D807001FFD5C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776621BD8D807001FFD5C /* QuartzCore.framework */; };
+		F5D776651BD8D812001FFD5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776641BD8D812001FFD5C /* Security.framework */; };
+		F5D776671BD8D819001FFD5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776661BD8D819001FFD5C /* StoreKit.framework */; };
+		F5D776691BD8D83C001FFD5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776681BD8D83C001FFD5C /* SystemConfiguration.framework */; };
+		F5D7766B1BD8D854001FFD5C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7766A1BD8D854001FFD5C /* libz.tbd */; };
+		F5D7766D1BD8D85E001FFD5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */; };
+		F5D776721BD8DC1D001FFD5C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776711BD8DC1D001FFD5C /* ParseUI.framework */; };
+		F5EFB9131BC6617600F41640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9121BC6617600F41640 /* AppDelegate.swift */; };
+		F5EFB9151BC6617600F41640 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9141BC6617600F41640 /* RadarViewController.swift */; };
+		F5EFB91B1BC6617600F41640 /* GetLocationtest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9191BC6617600F41640 /* GetLocationtest.xcdatamodeld */; };
+		F5EFB91D1BC6617600F41640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5EFB91C1BC6617600F41640 /* Assets.xcassets */; };
+		F5EFB9201BC6617600F41640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFB91E1BC6617600F41640 /* LaunchScreen.storyboard */; };
+		F5EFB9361BC6617600F41640 /* GetLocationtestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9351BC6617600F41640 /* GetLocationtestUITests.swift */; };
+		F5EFB9481BC67DA300F41640 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EFB9471BC67DA300F41640 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5EFB9271BC6617600F41640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5EFB9071BC6617600F41640 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5EFB90E1BC6617600F41640;
+			remoteInfo = GetLocationtest;
+		};
+		F5EFB9321BC6617600F41640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5EFB9071BC6617600F41640 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5EFB90E1BC6617600F41640;
+			remoteInfo = GetLocationtest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F5384E641BD10B4200CABA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5D248D71BCFCD0500039E0D /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		F5D776581BD8D6FF001FFD5C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F5D776591BD8D6FF001FFD5C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F5D7765C1BD8D7CA001FFD5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F5D7765E1BD8D7DD001FFD5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F5D776601BD8D7E6001FFD5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F5D776621BD8D807001FFD5C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F5D776641BD8D812001FFD5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F5D776661BD8D819001FFD5C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F5D776681BD8D83C001FFD5C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F5D7766A1BD8D854001FFD5C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "E-vade-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5D776711BD8DC1D001FFD5C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		F5EFB90F1BC6617600F41640 /* E-vade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-vade.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EFB9121BC6617600F41640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5EFB9141BC6617600F41640 /* RadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
+		F5EFB91A1BC6617600F41640 /* GetLocationtest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GetLocationtest.xcdatamodel; sourceTree = "<group>"; };
+		F5EFB91C1BC6617600F41640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5EFB91F1BC6617600F41640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5EFB9211BC6617600F41640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5EFB9261BC6617600F41640 /* E-vade.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-vade.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EFB92C1BC6617600F41640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5EFB9311BC6617600F41640 /* E-vade.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "E-vade.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5EFB9351BC6617600F41640 /* GetLocationtestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationtestUITests.swift; sourceTree = "<group>"; };
+		F5EFB9371BC6617600F41640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5EFB9471BC67DA300F41640 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5EFB90C1BC6617600F41640 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5D7766D1BD8D85E001FFD5C /* libsqlite3.tbd in Frameworks */,
+				F5D7766B1BD8D854001FFD5C /* libz.tbd in Frameworks */,
+				F5D776691BD8D83C001FFD5C /* SystemConfiguration.framework in Frameworks */,
+				F5D776671BD8D819001FFD5C /* StoreKit.framework in Frameworks */,
+				F5D776651BD8D812001FFD5C /* Security.framework in Frameworks */,
+				F5D776631BD8D807001FFD5C /* QuartzCore.framework in Frameworks */,
+				F5EFB9481BC67DA300F41640 /* CoreLocation.framework in Frameworks */,
+				F5D776611BD8D7E6001FFD5C /* CoreGraphics.framework in Frameworks */,
+				F5D7765F1BD8D7DD001FFD5C /* CFNetwork.framework in Frameworks */,
+				F5D7765D1BD8D7CA001FFD5C /* AudioToolbox.framework in Frameworks */,
+				F5D7765B1BD8D6FF001FFD5C /* Parse.framework in Frameworks */,
+				F5D7765A1BD8D6FF001FFD5C /* Bolts.framework in Frameworks */,
+				F5D776721BD8DC1D001FFD5C /* ParseUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB9231BC6617600F41640 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB92E1BC6617600F41640 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5EFB9061BC6617600F41640 = {
+			isa = PBXGroup;
+			children = (
+				F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */,
+				F5D7766A1BD8D854001FFD5C /* libz.tbd */,
+				F5D776711BD8DC1D001FFD5C /* ParseUI.framework */,
+				F5D776681BD8D83C001FFD5C /* SystemConfiguration.framework */,
+				F5D776661BD8D819001FFD5C /* StoreKit.framework */,
+				F5D776641BD8D812001FFD5C /* Security.framework */,
+				F5D776621BD8D807001FFD5C /* QuartzCore.framework */,
+				F5D776601BD8D7E6001FFD5C /* CoreGraphics.framework */,
+				F5D7765E1BD8D7DD001FFD5C /* CFNetwork.framework */,
+				F5D7765C1BD8D7CA001FFD5C /* AudioToolbox.framework */,
+				F5D776581BD8D6FF001FFD5C /* Bolts.framework */,
+				F5D776591BD8D6FF001FFD5C /* Parse.framework */,
+				F5EFB9471BC67DA300F41640 /* CoreLocation.framework */,
+				F5EFB9111BC6617600F41640 /* E-vade */,
+				F5EFB9291BC6617600F41640 /* E-vade */,
+				F5EFB9341BC6617600F41640 /* GetLocationtestUITests */,
+				F5EFB9101BC6617600F41640 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5EFB9101BC6617600F41640 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFB90F1BC6617600F41640 /* E-vade.app */,
+				F5EFB9261BC6617600F41640 /* E-vade.xctest */,
+				F5EFB9311BC6617600F41640 /* E-vade.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5EFB9111BC6617600F41640 /* E-vade */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFB9121BC6617600F41640 /* AppDelegate.swift */,
+				F5384E631BD10B4200CABA55 /* Main.storyboard */,
+				F5EFB9141BC6617600F41640 /* RadarViewController.swift */,
+				F5EFB91C1BC6617600F41640 /* Assets.xcassets */,
+				F5EFB91E1BC6617600F41640 /* LaunchScreen.storyboard */,
+				F5EFB9211BC6617600F41640 /* Info.plist */,
+				F5EFB9191BC6617600F41640 /* GetLocationtest.xcdatamodeld */,
+				F5D248D71BCFCD0500039E0D /* CustomAnnotation.swift */,
+				F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */,
+			);
+			name = "E-vade";
+			path = GetLocationtest;
+			sourceTree = "<group>";
+		};
+		F5EFB9291BC6617600F41640 /* E-vade */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFB92C1BC6617600F41640 /* Info.plist */,
+			);
+			name = "E-vade";
+			path = GetLocationtestTests;
+			sourceTree = "<group>";
+		};
+		F5EFB9341BC6617600F41640 /* GetLocationtestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5EFB9351BC6617600F41640 /* GetLocationtestUITests.swift */,
+				F5EFB9371BC6617600F41640 /* Info.plist */,
+			);
+			path = GetLocationtestUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5EFB90E1BC6617600F41640 /* E-vade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5EFB93A1BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vade" */;
+			buildPhases = (
+				F5EFB90B1BC6617600F41640 /* Sources */,
+				F5EFB90C1BC6617600F41640 /* Frameworks */,
+				F5EFB90D1BC6617600F41640 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "E-vade";
+			productName = GetLocationtest;
+			productReference = F5EFB90F1BC6617600F41640 /* E-vade.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5EFB9251BC6617600F41640 /* E-vadeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5EFB93D1BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vadeTests" */;
+			buildPhases = (
+				F5EFB9221BC6617600F41640 /* Sources */,
+				F5EFB9231BC6617600F41640 /* Frameworks */,
+				F5EFB9241BC6617600F41640 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5EFB9281BC6617600F41640 /* PBXTargetDependency */,
+			);
+			name = "E-vadeTests";
+			productName = GetLocationtestTests;
+			productReference = F5EFB9261BC6617600F41640 /* E-vade.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5EFB9301BC6617600F41640 /* E-vadeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5EFB9401BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vadeUITests" */;
+			buildPhases = (
+				F5EFB92D1BC6617600F41640 /* Sources */,
+				F5EFB92E1BC6617600F41640 /* Frameworks */,
+				F5EFB92F1BC6617600F41640 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5EFB9331BC6617600F41640 /* PBXTargetDependency */,
+			);
+			name = "E-vadeUITests";
+			productName = GetLocationtestUITests;
+			productReference = F5EFB9311BC6617600F41640 /* E-vade.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5EFB9071BC6617600F41640 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Fhict;
+				TargetAttributes = {
+					F5EFB90E1BC6617600F41640 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					F5EFB9251BC6617600F41640 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = F5EFB90E1BC6617600F41640;
+					};
+					F5EFB9301BC6617600F41640 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = F5EFB90E1BC6617600F41640;
+					};
+				};
+			};
+			buildConfigurationList = F5EFB90A1BC6617600F41640 /* Build configuration list for PBXProject "E-vade" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5EFB9061BC6617600F41640;
+			productRefGroup = F5EFB9101BC6617600F41640 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5EFB90E1BC6617600F41640 /* E-vade */,
+				F5EFB9251BC6617600F41640 /* E-vadeTests */,
+				F5EFB9301BC6617600F41640 /* E-vadeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5EFB90D1BC6617600F41640 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5384E651BD10B4200CABA55 /* Main.storyboard in Resources */,
+				F5EFB9201BC6617600F41640 /* LaunchScreen.storyboard in Resources */,
+				F5EFB91D1BC6617600F41640 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB9241BC6617600F41640 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB92F1BC6617600F41640 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5EFB90B1BC6617600F41640 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5EFB9151BC6617600F41640 /* RadarViewController.swift in Sources */,
+				F5EFB91B1BC6617600F41640 /* GetLocationtest.xcdatamodeld in Sources */,
+				F5D248D81BCFCD0500039E0D /* CustomAnnotation.swift in Sources */,
+				F5EFB9131BC6617600F41640 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB9221BC6617600F41640 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5EFB92D1BC6617600F41640 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5EFB9361BC6617600F41640 /* GetLocationtestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5EFB9281BC6617600F41640 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5EFB90E1BC6617600F41640 /* E-vade */;
+			targetProxy = F5EFB9271BC6617600F41640 /* PBXContainerItemProxy */;
+		};
+		F5EFB9331BC6617600F41640 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5EFB90E1BC6617600F41640 /* E-vade */;
+			targetProxy = F5EFB9321BC6617600F41640 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5384E631BD10B4200CABA55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5384E641BD10B4200CABA55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5EFB91E1BC6617600F41640 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5EFB91F1BC6617600F41640 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5EFB9381BC6617600F41640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5EFB9391BC6617600F41640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5EFB93B1BC6617600F41640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GetLocationtest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtest;
+				PRODUCT_NAME = "E-vade";
+				SWIFT_OBJC_BRIDGING_HEADER = "GetLocationtest/E-vade-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F5EFB93C1BC6617600F41640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GetLocationtest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtest;
+				PRODUCT_NAME = "E-vade";
+				SWIFT_OBJC_BRIDGING_HEADER = "GetLocationtest/E-vade-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F5EFB93E1BC6617600F41640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GetLocationtestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtestTests;
+				PRODUCT_NAME = "E-vade";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-vade.app/E-vade";
+			};
+			name = Debug;
+		};
+		F5EFB93F1BC6617600F41640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GetLocationtestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtestTests;
+				PRODUCT_NAME = "E-vade";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/E-vade.app/E-vade";
+			};
+			name = Release;
+		};
+		F5EFB9411BC6617600F41640 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GetLocationtestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtestUITests;
+				PRODUCT_NAME = "E-vade";
+				TEST_TARGET_NAME = GetLocationtest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F5EFB9421BC6617600F41640 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GetLocationtestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtestUITests;
+				PRODUCT_NAME = "E-vade";
+				TEST_TARGET_NAME = GetLocationtest;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5EFB90A1BC6617600F41640 /* Build configuration list for PBXProject "E-vade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5EFB9381BC6617600F41640 /* Debug */,
+				F5EFB9391BC6617600F41640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5EFB93A1BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5EFB93B1BC6617600F41640 /* Debug */,
+				F5EFB93C1BC6617600F41640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5EFB93D1BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vadeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5EFB93E1BC6617600F41640 /* Debug */,
+				F5EFB93F1BC6617600F41640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5EFB9401BC6617600F41640 /* Build configuration list for PBXNativeTarget "E-vadeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5EFB9411BC6617600F41640 /* Debug */,
+				F5EFB9421BC6617600F41640 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F5EFB9191BC6617600F41640 /* GetLocationtest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F5EFB91A1BC6617600F41640 /* GetLocationtest.xcdatamodel */,
+			);
+			currentVersion = F5EFB91A1BC6617600F41640 /* GetLocationtest.xcdatamodel */;
+			path = GetLocationtest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F5EFB9071BC6617600F41640 /* Project object */;
+}
