@@ -15,29 +15,31 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     private var timer: NSTimer!
     private var followpointer = false
-    private let regionRadius: CLLocationDistance = 50
+    private var myAnnotation: CustomAnnotation!
     private var locationManager = CLLocationManager()
+    private let regionRadius: CLLocationDistance = 50
     
-    private var lastCheckPoint = CLLocationCoordinate2D(
-        latitude: 51.4365957,
-        longitude: 5.4780014)
     private var initialLocation = CLLocation(
         latitude: 51.4365957,
         longitude: 5.4780014)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mkvLocations.showsUserLocation = true
-        timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
         initLocationManager()
+        timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
+        
+        self.myAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: 51.4365957,longitude: 5.4780014),
+            title: "Check", subtitle: "Check", fbUserId: "1")
+        self.myAnnotation.getDataFromParse()
         
         let lpgr = UILongPressGestureRecognizer(target: self, action:"handleLongPress:")
-
         lpgr.minimumPressDuration = 0.5
         lpgr.delaysTouchesBegan = true
         lpgr.delegate = self
+        
         self.mkvLocations.addGestureRecognizer(lpgr)
-        mkvLocations.delegate = self
+        self.mkvLocations.showsUserLocation = true
+        self.mkvLocations.delegate = self
     }
     
     func initLocationManager(){
@@ -57,9 +59,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
         }
         centerMapOnLocation(initialLocation)
-    }
-    
-    
+    }    
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         locationManager.stopUpdatingLocation()
@@ -73,16 +73,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if(self.followpointer){
             centerMapOnLocation(initialLocation)
         }
-        let annotation: CustomAnnotation = CustomAnnotation(coordinate: lastCheckPoint, title: "Check", subtitle: "Check", fbUserId: "")
-        annotation.calculateDistance(coord)
-        if(annotation.getDistance() > 5){
-            lastCheckPoint = CLLocationCoordinate2D(
+        
+        self.myAnnotation.calculateDistance(coord)
+        if(self.myAnnotation.getDistance() > 5){
+            self.myAnnotation.setDataToParse()
+            self.myAnnotation.coordinate = CLLocationCoordinate2D(
                 latitude: locationManager.location!.coordinate.latitude,
                 longitude: locationManager.location!.coordinate.longitude
             )
             createNotification()
         }
-        
     }
     
     
@@ -105,7 +105,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func btResetView(sender: AnyObject) {
@@ -137,7 +136,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let locationCoordinate = self.mkvLocations.convertPoint(touchLocation,toCoordinateFromView: self.mkvLocations)
         
         if gestureReconizer.state != UIGestureRecognizerState.Ended {
-
             let alert = UIAlertController(title: "Spot a friend", message: "", preferredStyle: .Alert)
             
             alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
@@ -150,9 +148,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 let annotationsToRemove = self.mkvLocations.annotations.filter { $0.title! == textField.text }
                 self.mkvLocations.removeAnnotations( annotationsToRemove )
                 self.addAnnotation(textField.text!, subtitle: self.getCurrentTime(), location: locationCoordinate, fbUserID: "")
-
             }))
-            
             
             self.presentViewController(alert, animated: true, completion: nil)
             return
@@ -284,7 +280,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         notification.fireDate = date
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
+    }    
 }
 
