@@ -116,7 +116,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F5EFB9061BC6617600F41640 = {
+		F5DCA4D31BD96B5C0007FE1B /* framework */ = {
 			isa = PBXGroup;
 			children = (
 				F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */,
@@ -132,6 +132,14 @@
 				F5D776581BD8D6FF001FFD5C /* Bolts.framework */,
 				F5D776591BD8D6FF001FFD5C /* Parse.framework */,
 				F5EFB9471BC67DA300F41640 /* CoreLocation.framework */,
+			);
+			name = framework;
+			sourceTree = "<group>";
+		};
+		F5EFB9061BC6617600F41640 = {
+			isa = PBXGroup;
+			children = (
+				F5DCA4D31BD96B5C0007FE1B /* framework */,
 				F5EFB9111BC6617600F41640 /* E-vade */,
 				F5EFB9291BC6617600F41640 /* E-vade */,
 				F5EFB9341BC6617600F41640 /* GetLocationtestUITests */,

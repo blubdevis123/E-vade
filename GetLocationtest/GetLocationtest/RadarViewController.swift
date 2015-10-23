@@ -102,7 +102,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }else{
             let alertController = UIAlertController(title: "Error", message:
                 "Please enter a name!", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: {
+                (action) -> Void in
+                self.spotaFriend(location)
+            }))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
@@ -136,27 +139,32 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let locationCoordinate = self.mkvLocations.convertPoint(touchLocation,toCoordinateFromView: self.mkvLocations)
         
         if gestureReconizer.state != UIGestureRecognizerState.Ended {
-            let alert = UIAlertController(title: "Spot a friend", message: "", preferredStyle: .Alert)
-            
-            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                textField.attributedPlaceholder = NSAttributedString(string:"Name")
-            })
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
-            }))
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-                let textField = alert.textFields![0] as UITextField
-                let annotationsToRemove = self.mkvLocations.annotations.filter { $0.title! == textField.text }
-                self.mkvLocations.removeAnnotations( annotationsToRemove )
-                self.addAnnotation(textField.text!, subtitle: self.getCurrentTime(), location: locationCoordinate, fbUserID: "")
-            }))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
+            spotaFriend(locationCoordinate)
+                        return
         }
         if gestureReconizer.state != UIGestureRecognizerState.Began {
             return
         }
     }
+    
+    func spotaFriend(locationCoordinate: CLLocationCoordinate2D){
+        let alert = UIAlertController(title: "Spot a friend", message: "", preferredStyle: .Alert)
+        
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.attributedPlaceholder = NSAttributedString(string:"Name")
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+        }))
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            let annotationsToRemove = self.mkvLocations.annotations.filter { $0.title! == textField.text }
+            self.mkvLocations.removeAnnotations( annotationsToRemove )
+            self.addAnnotation(textField.text!, subtitle: self.getCurrentTime(), location: locationCoordinate, fbUserID: "")
+        }))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     
     func mapView(MapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "CustomAnnotation"
@@ -212,7 +220,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 if ca.getFbUserId() != ""{
                     ca.getDataFromParse()
                 }
-                
                 ca.calculateDistance(self.mkvLocations.userLocation.coordinate)
                 if(ca.getDistance() < 10){
                     distanceAnnotationShort.append(ca.title!)
