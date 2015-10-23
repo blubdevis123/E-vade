@@ -27,7 +27,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         initLocationManager()
         timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
-        
         self.myAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: 51.4365957,longitude: 5.4780014),
             title: "Check", subtitle: "Check", fbUserId: "1")
         self.myAnnotation.getDataFromParse()
@@ -40,6 +39,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.mkvLocations.addGestureRecognizer(lpgr)
         self.mkvLocations.showsUserLocation = true
         self.mkvLocations.delegate = self
+        defaultAnnottions()
     }
     
     func initLocationManager(){
@@ -76,6 +76,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         self.myAnnotation.calculateDistance(coord)
         if(self.myAnnotation.getDistance() > 5){
+            defaultAnnottions()
             self.myAnnotation.setDataToParse()
             self.myAnnotation.coordinate = CLLocationCoordinate2D(
                 latitude: locationManager.location!.coordinate.latitude,
@@ -96,9 +97,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func addAnnotation(title: String, subtitle: String, location: CLLocationCoordinate2D, fbUserID: String){
         if(title != ""){
-        let annotation = CustomAnnotation(coordinate: location, title: title, subtitle: subtitle, fbUserId: fbUserID)
-        annotation.calculateDistance(self.mkvLocations.userLocation.coordinate)
-        mkvLocations.addAnnotation(annotation)
+            let annotation = CustomAnnotation(coordinate: location, title: title, subtitle: subtitle, fbUserId: fbUserID)
+            annotation.calculateDistance(self.mkvLocations.userLocation.coordinate)
+            annotation.getDataFromParse()
+            mkvLocations.addAnnotation(annotation)
         }else{
             let alertController = UIAlertController(title: "Error", message:
                 "Please enter a name!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -287,6 +289,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         notification.fireDate = date
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }    
+    }
+    func defaultAnnottions(){
+        let persons = friends.fbFriends.filter{$0.getEvaded()}
+        
+        for ps in persons{
+            var b:Bool = false
+            for item in self.mkvLocations.annotations {
+                if let ca = item as? CustomAnnotation {
+                    if ca.getFbUserId() == ps.getId() {
+                        ca.setDataToParse()
+                        b = true
+                    }
+                }
+            }
+            if !b {
+                addAnnotation(ps.getName(), subtitle: getCurrentTime(),
+                    location: self.myAnnotation.coordinate, fbUserID: ps.getId())
+            }
+        }
+        
+        
+    }
 }
 

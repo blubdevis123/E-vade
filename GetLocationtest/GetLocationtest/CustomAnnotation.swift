@@ -52,11 +52,10 @@ class CustomAnnotation: NSObject, MKAnnotation {
                 print("objects counted: \(objects!.count)")
                 if let objects = objects {
                     for object in objects {
-                        let location = object["Coordinates"] as! PFGeoPoint
-                        self.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                            let location = object["Coordinates"] as! PFGeoPoint
+                            self.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
                     }
                 }
-                
             }
         }
     }

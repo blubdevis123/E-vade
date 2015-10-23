@@ -47,6 +47,48 @@
     <string>This app like to use your location</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>You need this to show your location</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+        <string>fb-messenger-api</string>
+        <string>twitter</string>
+        <string>whatsapp</string>
+        <string>wechat</string>
+        <string>line</string>
+        <string>instagram</string>
+        <string>kakaotalk</string>
+        <string>mqq</string>
+        <string>vk</string>
+        <string>comgooglemaps</string>
+    </array>
+    <key>FacebookAppID</key>
+    <string>190473314617178</string>
+    <key>FacebookDisplayName</key>
+    <string>E-Vader</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>armv7</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb190473314617178</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>
 

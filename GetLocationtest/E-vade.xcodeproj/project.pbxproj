@@ -21,6 +21,17 @@
 		F5D7766B1BD8D854001FFD5C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7766A1BD8D854001FFD5C /* libz.tbd */; };
 		F5D7766D1BD8D85E001FFD5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */; };
 		F5D776721BD8DC1D001FFD5C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776711BD8DC1D001FFD5C /* ParseUI.framework */; };
+		F5DCA4D51BDA29D20007FE1B /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */; };
+		F5DCA4D71BDA2BA80007FE1B /* FriendsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */; };
+		F5DCA4D91BDA2C0F0007FE1B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */; };
+		F5DCA4DB1BDA2C690007FE1B /* fbFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */; };
+		F5DCA4E21BDA2E860007FE1B /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5DCA4DC1BDA2E860007FE1B /* FacebookSDKStrings.bundle */; };
+		F5DCA4E31BDA2E860007FE1B /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4DD1BDA2E860007FE1B /* FBAudienceNetwork.framework */; };
+		F5DCA4E41BDA2E860007FE1B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4DE1BDA2E860007FE1B /* FBSDKCoreKit.framework */; };
+		F5DCA4E51BDA2E860007FE1B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4DF1BDA2E860007FE1B /* FBSDKLoginKit.framework */; };
+		F5DCA4E61BDA2E860007FE1B /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4E01BDA2E860007FE1B /* FBSDKMessengerShareKit.framework */; };
+		F5DCA4E71BDA2E860007FE1B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4E11BDA2E860007FE1B /* FBSDKShareKit.framework */; };
+		F5DCA4E91BDA2E9A0007FE1B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DCA4E81BDA2E9A0007FE1B /* Bolts.framework */; };
 		F5EFB9131BC6617600F41640 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9121BC6617600F41640 /* AppDelegate.swift */; };
 		F5EFB9151BC6617600F41640 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9141BC6617600F41640 /* RadarViewController.swift */; };
 		F5EFB91B1BC6617600F41640 /* GetLocationtest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9191BC6617600F41640 /* GetLocationtest.xcdatamodeld */; };
@@ -63,6 +74,17 @@
 		F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "E-vade-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5D776711BD8DC1D001FFD5C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
+		F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableTableViewController.swift; sourceTree = "<group>"; };
+		F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fbFriendCell.swift; sourceTree = "<group>"; };
+		F5DCA4DC1BDA2E860007FE1B /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		F5DCA4DD1BDA2E860007FE1B /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		F5DCA4DE1BDA2E860007FE1B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F5DCA4DF1BDA2E860007FE1B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F5DCA4E01BDA2E860007FE1B /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		F5DCA4E11BDA2E860007FE1B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F5DCA4E81BDA2E9A0007FE1B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDKStrings.bundle/Bolts.framework; sourceTree = "<group>"; };
 		F5EFB90F1BC6617600F41640 /* E-vade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "E-vade.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5EFB9121BC6617600F41640 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5EFB9141BC6617600F41640 /* RadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
@@ -84,17 +106,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D7766D1BD8D85E001FFD5C /* libsqlite3.tbd in Frameworks */,
+				F5DCA4E91BDA2E9A0007FE1B /* Bolts.framework in Frameworks */,
 				F5D7766B1BD8D854001FFD5C /* libz.tbd in Frameworks */,
 				F5D776691BD8D83C001FFD5C /* SystemConfiguration.framework in Frameworks */,
 				F5D776671BD8D819001FFD5C /* StoreKit.framework in Frameworks */,
+				F5DCA4E61BDA2E860007FE1B /* FBSDKMessengerShareKit.framework in Frameworks */,
 				F5D776651BD8D812001FFD5C /* Security.framework in Frameworks */,
+				F5DCA4E31BDA2E860007FE1B /* FBAudienceNetwork.framework in Frameworks */,
 				F5D776631BD8D807001FFD5C /* QuartzCore.framework in Frameworks */,
 				F5EFB9481BC67DA300F41640 /* CoreLocation.framework in Frameworks */,
 				F5D776611BD8D7E6001FFD5C /* CoreGraphics.framework in Frameworks */,
 				F5D7765F1BD8D7DD001FFD5C /* CFNetwork.framework in Frameworks */,
+				F5DCA4E41BDA2E860007FE1B /* FBSDKCoreKit.framework in Frameworks */,
 				F5D7765D1BD8D7CA001FFD5C /* AudioToolbox.framework in Frameworks */,
 				F5D7765B1BD8D6FF001FFD5C /* Parse.framework in Frameworks */,
+				F5DCA4E71BDA2E860007FE1B /* FBSDKShareKit.framework in Frameworks */,
 				F5D7765A1BD8D6FF001FFD5C /* Bolts.framework in Frameworks */,
+				F5DCA4E51BDA2E860007FE1B /* FBSDKLoginKit.framework in Frameworks */,
 				F5D776721BD8DC1D001FFD5C /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +149,13 @@
 			children = (
 				F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */,
 				F5D7766A1BD8D854001FFD5C /* libz.tbd */,
+				F5DCA4E81BDA2E9A0007FE1B /* Bolts.framework */,
+				F5DCA4DC1BDA2E860007FE1B /* FacebookSDKStrings.bundle */,
+				F5DCA4DD1BDA2E860007FE1B /* FBAudienceNetwork.framework */,
+				F5DCA4DE1BDA2E860007FE1B /* FBSDKCoreKit.framework */,
+				F5DCA4DF1BDA2E860007FE1B /* FBSDKLoginKit.framework */,
+				F5DCA4E01BDA2E860007FE1B /* FBSDKMessengerShareKit.framework */,
+				F5DCA4E11BDA2E860007FE1B /* FBSDKShareKit.framework */,
 				F5D776711BD8DC1D001FFD5C /* ParseUI.framework */,
 				F5D776681BD8D83C001FFD5C /* SystemConfiguration.framework */,
 				F5D776661BD8D819001FFD5C /* StoreKit.framework */,
@@ -169,6 +204,10 @@
 				F5EFB9191BC6617600F41640 /* GetLocationtest.xcdatamodeld */,
 				F5D248D71BCFCD0500039E0D /* CustomAnnotation.swift */,
 				F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */,
+				F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */,
+				F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */,
+				F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */,
+				F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */,
 			);
 			name = "E-vade";
 			path = GetLocationtest;
@@ -299,6 +338,7 @@
 				F5384E651BD10B4200CABA55 /* Main.storyboard in Resources */,
 				F5EFB9201BC6617600F41640 /* LaunchScreen.storyboard in Resources */,
 				F5EFB91D1BC6617600F41640 /* Assets.xcassets in Resources */,
+				F5DCA4E21BDA2E860007FE1B /* FacebookSDKStrings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +363,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5DCA4D71BDA2BA80007FE1B /* FriendsTableTableViewController.swift in Sources */,
+				F5DCA4D91BDA2C0F0007FE1B /* Friend.swift in Sources */,
 				F5EFB9151BC6617600F41640 /* RadarViewController.swift in Sources */,
 				F5EFB91B1BC6617600F41640 /* GetLocationtest.xcdatamodeld in Sources */,
+				F5DCA4D51BDA29D20007FE1B /* FacebookViewController.swift in Sources */,
+				F5DCA4DB1BDA2C690007FE1B /* fbFriendCell.swift in Sources */,
 				F5D248D81BCFCD0500039E0D /* CustomAnnotation.swift in Sources */,
 				F5EFB9131BC6617600F41640 /* AppDelegate.swift in Sources */,
 			);
@@ -471,6 +515,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDKStrings.bundle",
 				);
 				INFOPLIST_FILE = GetLocationtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,6 +534,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FacebookSDKStrings.bundle",
 				);
 				INFOPLIST_FILE = GetLocationtest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

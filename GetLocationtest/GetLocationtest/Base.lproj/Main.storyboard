@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Y9G-Hi-CWF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UOj-Fw-5Xn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -61,6 +61,28 @@
             </objects>
             <point key="canvasLocation" x="3095" y="720"/>
         </scene>
+        <!--Facebook View Controller-->
+        <scene sceneID="Uuj-JZ-zcb">
+            <objects>
+                <viewController id="UOj-Fw-5Xn" customClass="FacebookViewController" customModule="E_vade" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="15c-kn-R6o"/>
+                        <viewControllerLayoutGuide type="bottom" id="OMR-5E-LcS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GO7-SV-mvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="Y9G-Hi-CWF" kind="presentation" identifier="loginSuccess" id="jok-Ji-bD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szj-1z-d95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="727"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="MGS-6i-eYt">
             <objects>
@@ -80,30 +102,63 @@
             </objects>
             <point key="canvasLocation" x="1980" y="1551"/>
         </scene>
-        <!--Friends-->
-        <scene sceneID="Xpf-X8-Hfx">
+        <!--Friends Table Table View Controller-->
+        <scene sceneID="X7Q-rF-5iI">
             <objects>
-                <viewController id="lVu-tN-ttl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Psu-VU-b7N"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZmT-BT-Qpq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LS6-ig-all">
+                <tableViewController id="5cc-L7-5nL" customClass="FriendsTableTableViewController" customModule="E_vade" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6BB-3P-ZCM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Friends" systemItem="contacts" id="M0v-dp-wS9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8hn-Vi-6Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rhb-rB-0QK" customClass="fbFriendCell" customModule="E_vade" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rhb-rB-0QK" id="GE2-S6-0jP">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bj2-DE-TKi">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lL-Qu-caE">
+                                            <rect key="frame" x="56" y="16" width="205" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-nu-gck">
+                                            <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="evadeClicked:" destination="rhb-rB-0QK" eventType="valueChanged" id="6QR-fP-S7S"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fbEvadeSwitch" destination="2x5-nu-gck" id="6U3-nO-cAN"/>
+                                    <outlet property="fbName" destination="4lL-Qu-caE" id="lJH-54-lGr"/>
+                                    <outlet property="fbProfile" destination="bj2-DE-TKi" id="A0b-i1-fAj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5cc-L7-5nL" id="rrw-nN-IxF"/>
+                            <outlet property="delegate" destination="5cc-L7-5nL" id="Q6f-GG-Hf5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="z0g-sG-eVt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQn-I9-7sA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877" y="1551"/>
+            <point key="canvasLocation" x="2945" y="1551"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vr0-sa-Trh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y9G-Hi-CWF" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hkE-dT-GxQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VNg-Ak-aG0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -133,7 +188,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="lVu-tN-ttl" kind="relationship" relationship="viewControllers" id="CM3-Yq-ASW"/>
+                        <segue destination="5cc-L7-5nL" kind="relationship" relationship="viewControllers" id="fdH-RZ-rNh"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bxp-2s-A10"/>
                         <segue destination="aQc-xl-DSe" kind="relationship" relationship="viewControllers" id="5Pf-Er-Zlr"/>
                     </connections>
