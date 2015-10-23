@@ -28,7 +28,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         initLocationManager()
         timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
         self.myAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: 51.4365957,longitude: 5.4780014),
-            title: "Check", subtitle: "Check", fbUserId: "1")
+            title: "Check", fbUserId: "1")
         self.myAnnotation.getDataFromParse()
         
         let lpgr = UILongPressGestureRecognizer(target: self, action:"handleLongPress:")
@@ -86,19 +86,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
-    
-    func getCurrentTime() -> String{
-        let todaysDate:NSDate = NSDate()
-        let dateFormatter:NSDateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let DateInFormat:String = dateFormatter.stringFromDate(todaysDate)
-        return DateInFormat
-    }
-    
-    func addAnnotation(title: String, subtitle: String, location: CLLocationCoordinate2D, fbUserID: String){
+    func addAnnotation(title: String, location: CLLocationCoordinate2D, fbUserID: String){
         if(title != ""){
-            let annotation = CustomAnnotation(coordinate: location, title: title, subtitle: subtitle, fbUserId: fbUserID)
+            let annotation = CustomAnnotation(coordinate: location, title: title, fbUserId: fbUserID)
             annotation.calculateDistance(self.mkvLocations.userLocation.coordinate)
+            annotation.setCurrentTime()
             annotation.getDataFromParse()
             mkvLocations.addAnnotation(annotation)
         }else{
@@ -161,7 +153,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let textField = alert.textFields![0] as UITextField
             let annotationsToRemove = self.mkvLocations.annotations.filter { $0.title! == textField.text }
             self.mkvLocations.removeAnnotations( annotationsToRemove )
-            self.addAnnotation(textField.text!, subtitle: self.getCurrentTime(), location: locationCoordinate, fbUserID: "")
+            self.addAnnotation(textField.text!, location: locationCoordinate, fbUserID: "")
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -292,23 +284,37 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     func defaultAnnottions(){
         let persons = friends.fbFriends.filter{$0.getEvaded()}
-        
         for ps in persons{
-            var b:Bool = false
+            var exist:Bool = false
             for item in self.mkvLocations.annotations {
                 if let ca = item as? CustomAnnotation {
                     if ca.getFbUserId() == ps.getId() {
                         ca.setDataToParse()
-                        b = true
+                        exist = true
                     }
                 }
             }
-            if !b {
-                addAnnotation(ps.getName(), subtitle: getCurrentTime(),
-                    location: self.myAnnotation.coordinate, fbUserID: ps.getId())
+            if !exist {
+                addAnnotation(ps.getName(), location: self.myAnnotation.coordinate, fbUserID: ps.getId())
             }
         }
         
+        let removePersons = friends.fbFriends.filter{!$0.getEvaded()}
+        for rp in removePersons{
+            var c: CustomAnnotation = myAnnotation
+            var remove: Bool = false
+            for item in self.mkvLocations.annotations {
+                if let ca = item as? CustomAnnotation {
+                    if ca.getFbUserId() == rp.getId() {
+                        remove = true
+                        c = ca
+                    }
+                }
+            }
+            if remove {
+                self.mkvLocations.removeAnnotation(c)
+            }
+        }
         
     }
 }

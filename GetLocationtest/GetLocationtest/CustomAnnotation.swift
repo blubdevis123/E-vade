@@ -16,10 +16,9 @@ class CustomAnnotation: NSObject, MKAnnotation {
     private var distance: Double?
     private var fbUserId: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String, subtitle: String, fbUserId: String) {
+    init(coordinate: CLLocationCoordinate2D, title: String, fbUserId: String) {
         self.title = title
         self.coordinate = coordinate
-        self.subtitle = subtitle
         self.fbUserId = fbUserId
     }
     
@@ -27,6 +26,13 @@ class CustomAnnotation: NSObject, MKAnnotation {
         let source = CLLocation(latitude: sourceCoordinate.latitude, longitude: sourceCoordinate.longitude)
         let destination = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
         self.distance = destination.distanceFromLocation(source)
+    }
+    
+    func setCurrentTime(){
+        let todaysDate:NSDate = NSDate()
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-YYYY HH:mm"
+        self.subtitle = dateFormatter.stringFromDate(todaysDate)
     }
     
     func getDataFromParse(){

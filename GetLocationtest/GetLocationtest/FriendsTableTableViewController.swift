@@ -26,8 +26,6 @@ class FriendsTableTableViewController: UITableViewController
             { (connection, result, error) -> Void in
                 if error == nil
                 {
-                    print("Friends are : \(result)")
-                    
                     let resultDict = result as! NSDictionary
                     let data : NSArray = resultDict.objectForKey("data") as! NSArray
                     
@@ -61,7 +59,6 @@ class FriendsTableTableViewController: UITableViewController
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("Rows: \(friends.fbFriends.count)")
         return friends.fbFriends.count
         //return 20
     }
