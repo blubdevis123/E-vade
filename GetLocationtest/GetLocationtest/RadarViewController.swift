@@ -10,14 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate{
+class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate{
     @IBOutlet weak var mkvLocations: MKMapView!
     
     private var timer: NSTimer!
     private var followpointer = false
     private var myAnnotation: CustomAnnotation!
     private var locationManager = CLLocationManager()
-    private let regionRadius: CLLocationDistance = 50
+    private let regionRadius: CLLocationDistance = 500
     
     private var initialLocation = CLLocation(
         latitude: 51.4365957,
@@ -28,7 +28,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         initLocationManager()
         timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
         self.myAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: 51.4365957,longitude: 5.4780014),
-            title: "Check", fbUserId: "1")
+            title: "Check", fbUserId: FbMe.ownFbId)
         self.myAnnotation.getDataFromParse()
         
         let lpgr = UILongPressGestureRecognizer(target: self, action:"handleLongPress:")
@@ -39,7 +39,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.mkvLocations.addGestureRecognizer(lpgr)
         self.mkvLocations.showsUserLocation = true
         self.mkvLocations.delegate = self
-        defaultAnnottions()
+        defaultAnnotations()
     }
     
     func initLocationManager(){
@@ -76,7 +76,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         self.myAnnotation.calculateDistance(coord)
         if(self.myAnnotation.getDistance() > 5){
-            defaultAnnottions()
+            defaultAnnotations()
+            refresh()
             self.myAnnotation.setDataToParse()
             self.myAnnotation.coordinate = CLLocationCoordinate2D(
                 latitude: locationManager.location!.coordinate.latitude,
@@ -134,7 +135,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         if gestureReconizer.state != UIGestureRecognizerState.Ended {
             spotaFriend(locationCoordinate)
-                        return
+            return
         }
         if gestureReconizer.state != UIGestureRecognizerState.Began {
             return
@@ -200,6 +201,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         ac.addAction(UIAlertAction(title: "Unfollow", style: .Destructive, handler: {(alert: UIAlertAction) in
             if let annotation = view.annotation as? CustomAnnotation {
                 self.mkvLocations.removeAnnotation(annotation)
+                for item in friends.fbFriends{
+                    if item.getId() == annotation.getFbUserId(){
+                        item.UnEvade()
+                    }
+                }
             }
         }))
         presentViewController(ac, animated: true, completion: nil)
@@ -282,23 +288,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
-    func defaultAnnottions(){
-        let persons = friends.fbFriends.filter{$0.getEvaded()}
-        for ps in persons{
-            var exist:Bool = false
-            for item in self.mkvLocations.annotations {
-                if let ca = item as? CustomAnnotation {
-                    if ca.getFbUserId() == ps.getId() {
-                        ca.setDataToParse()
-                        exist = true
-                    }
-                }
-            }
-            if !exist {
-                addAnnotation(ps.getName(), location: self.myAnnotation.coordinate, fbUserID: ps.getId())
-            }
-        }
-        
+    func defaultAnnotations(){
         let removePersons = friends.fbFriends.filter{!$0.getEvaded()}
         for rp in removePersons{
             var c: CustomAnnotation = myAnnotation
@@ -316,6 +306,33 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             }
         }
         
+        let persons = friends.fbFriends.filter{$0.getEvaded()}
+        for ps in persons{
+            var exist:Bool = false
+            for item in self.mkvLocations.annotations {
+                if let ca = item as? CustomAnnotation {
+                    if ca.getFbUserId() == ps.getId() {
+                        exist = true
+                    }
+                }
+            }
+            if !exist {
+                addAnnotation(ps.getName(), location: self.myAnnotation.coordinate, fbUserID: ps.getId())
+            }
+        }
+    }
+    func refresh(){
+        let annotations = self.mkvLocations.annotations
+        for annotation in annotations{
+            if let an = annotation as? CustomAnnotation {
+                self.mkvLocations.removeAnnotation(an)
+            }
+        }
+        for annotation in annotations{
+            if let an = annotation as? CustomAnnotation {
+                addAnnotation(an.title!, location: an.coordinate, fbUserID: an.getFbUserId())
+            }
+        }
     }
 }
 

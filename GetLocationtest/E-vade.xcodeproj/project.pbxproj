@@ -22,7 +22,7 @@
 		F5D7766D1BD8D85E001FFD5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D7766C1BD8D85E001FFD5C /* libsqlite3.tbd */; };
 		F5D776721BD8DC1D001FFD5C /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D776711BD8DC1D001FFD5C /* ParseUI.framework */; };
 		F5DCA4D51BDA29D20007FE1B /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */; };
-		F5DCA4D71BDA2BA80007FE1B /* FriendsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */; };
+		F5DCA4D71BDA2BA80007FE1B /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D61BDA2BA80007FE1B /* FriendsTableViewController.swift */; };
 		F5DCA4D91BDA2C0F0007FE1B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */; };
 		F5DCA4DB1BDA2C690007FE1B /* fbFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */; };
 		F5DCA4E21BDA2E860007FE1B /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5DCA4DC1BDA2E860007FE1B /* FacebookSDKStrings.bundle */; };
@@ -75,7 +75,7 @@
 		F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "E-vade-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5D776711BD8DC1D001FFD5C /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
-		F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableTableViewController.swift; sourceTree = "<group>"; };
+		F5DCA4D61BDA2BA80007FE1B /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fbFriendCell.swift; sourceTree = "<group>"; };
 		F5DCA4DC1BDA2E860007FE1B /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				F5D248D71BCFCD0500039E0D /* CustomAnnotation.swift */,
 				F5D7766E1BD8DB36001FFD5C /* E-vade-Bridging-Header.h */,
 				F5DCA4D41BDA29D20007FE1B /* FacebookViewController.swift */,
-				F5DCA4D61BDA2BA80007FE1B /* FriendsTableTableViewController.swift */,
+				F5DCA4D61BDA2BA80007FE1B /* FriendsTableViewController.swift */,
 				F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */,
 				F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */,
 			);
@@ -299,6 +299,7 @@
 				TargetAttributes = {
 					F5EFB90E1BC6617600F41640 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = RA8W89HU4Z;
 					};
 					F5EFB9251BC6617600F41640 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -363,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5DCA4D71BDA2BA80007FE1B /* FriendsTableTableViewController.swift in Sources */,
+				F5DCA4D71BDA2BA80007FE1B /* FriendsTableViewController.swift in Sources */,
 				F5DCA4D91BDA2C0F0007FE1B /* Friend.swift in Sources */,
 				F5EFB9151BC6617600F41640 /* RadarViewController.swift in Sources */,
 				F5EFB91B1BC6617600F41640 /* GetLocationtest.xcdatamodeld in Sources */,
@@ -512,6 +513,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -521,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtest;
 				PRODUCT_NAME = "E-vade";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetLocationtest/E-vade-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -531,6 +535,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -540,6 +546,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Schouten.GetLocationtest;
 				PRODUCT_NAME = "E-vade";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GetLocationtest/E-vade-Bridging-Header.h";
 			};
 			name = Release;

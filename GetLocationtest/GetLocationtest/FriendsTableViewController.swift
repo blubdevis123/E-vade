@@ -15,8 +15,8 @@ struct friends {
     static var fbFriends = [Friend]()
 }
 
-class FriendsTableTableViewController: UITableViewController
-{    
+class FriendsTableViewController: UITableViewController
+{
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +43,12 @@ class FriendsTableTableViewController: UITableViewController
                     print("Error Getting Friends \(error)");
                 }
         }
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func refresh(refreshControl: UIRefreshControl){
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,6 +76,7 @@ class FriendsTableTableViewController: UITableViewController
         let currentName = indexPath.row
         cell.fbProfile.image = friends.fbFriends[currentName].getProfilePicture()
         cell.fbName.text = "\(currentName). \(friends.fbFriends[currentName].getName())"
+        cell.setevadedSwitch(friends.fbFriends[currentName].getEvaded())
         cell.setFriend(friends.fbFriends[currentName])
         
         //print("Cell with friend: \(self.friendNames[currentName])")

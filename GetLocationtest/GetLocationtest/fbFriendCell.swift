@@ -46,5 +46,17 @@ class fbFriendCell: UITableViewCell {
     {
         self.fbFriend = fbFriend
     }
+    func setevadedSwitch(evade:Bool){
+        if(!evade)
+        {
+            fbEvadeSwitch.setOn(false, animated: true)
+            self.fbFriend.UnEvade();
+        }
+        else if(evade)
+        {
+            fbEvadeSwitch.setOn(true, animated: true)
+            self.fbFriend.Evade();
+        }
+    }
     
 }

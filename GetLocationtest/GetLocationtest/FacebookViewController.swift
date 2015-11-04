@@ -10,7 +10,9 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-
+struct FbMe {
+    static var ownFbId = ""
+}
 class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad()
@@ -22,7 +24,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         else
         {
             print("Al ingelogd");
-            //go to after login screen:
+            FbMe.ownFbId = FBSDKAccessToken.currentAccessToken().userID
             self.performSegueWithIdentifier("loginSuccess", sender:self)
         }
         
@@ -38,10 +40,7 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidAppear(animated: Bool) {
         if(FBSDKAccessToken.currentAccessToken() != nil)
         {
-            
             self.performSegueWithIdentifier("loginSuccess", sender:self)
-            
-            //returnUserData()
         }
     }
     
@@ -54,10 +53,6 @@ class FacebookViewController: UIViewController, FBSDKLoginButtonDelegate {
         if error == nil
         {
             print("Ingelogd")
-        }
-        else
-        {
-            print(error.localizedDescription);
         }
     }
     
