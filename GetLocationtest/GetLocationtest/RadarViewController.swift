@@ -80,6 +80,11 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             centerMapOnLocation(initialLocation)
         }
         
+        self.myAnnotation.coordinate = CLLocationCoordinate2D(
+            latitude: locationManager.location!.coordinate.latitude,
+            longitude: locationManager.location!.coordinate.longitude
+        )
+        
         self.myAnnotation.calculateDistance(coord)
         if(self.myAnnotation.getDistance() > acuracy){
             defaultAnnotations()
