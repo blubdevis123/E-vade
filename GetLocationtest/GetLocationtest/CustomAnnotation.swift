@@ -55,7 +55,7 @@ class CustomAnnotation: NSObject, MKAnnotation {
                         }
                     }
                 }
-                print("objects counted: \(objects!.count)")
+                //print("objects counted: \(objects!.count)")
                 if let objects = objects {
                     for object in objects {
                             let location = object["Coordinates"] as! PFGeoPoint

@@ -39,6 +39,7 @@
 		F5EFB9201BC6617600F41640 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5EFB91E1BC6617600F41640 /* LaunchScreen.storyboard */; };
 		F5EFB9361BC6617600F41640 /* GetLocationtestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EFB9351BC6617600F41640 /* GetLocationtestUITests.swift */; };
 		F5EFB9481BC67DA300F41640 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5EFB9471BC67DA300F41640 /* CoreLocation.framework */; };
+		F5F0E4661BEA63BC00288288 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F0E4651BEA63BC00288288 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		F5EFB9351BC6617600F41640 /* GetLocationtestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationtestUITests.swift; sourceTree = "<group>"; };
 		F5EFB9371BC6617600F41640 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5EFB9471BC67DA300F41640 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F5F0E4651BEA63BC00288288 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				F5DCA4D61BDA2BA80007FE1B /* FriendsTableViewController.swift */,
 				F5DCA4D81BDA2C0F0007FE1B /* Friend.swift */,
 				F5DCA4DA1BDA2C690007FE1B /* fbFriendCell.swift */,
+				F5F0E4651BEA63BC00288288 /* SettingsViewController.swift */,
 			);
 			name = "E-vade";
 			path = GetLocationtest;
@@ -371,6 +374,7 @@
 				F5DCA4D51BDA29D20007FE1B /* FacebookViewController.swift in Sources */,
 				F5DCA4DB1BDA2C690007FE1B /* fbFriendCell.swift in Sources */,
 				F5D248D81BCFCD0500039E0D /* CustomAnnotation.swift in Sources */,
+				F5F0E4661BEA63BC00288288 /* SettingsViewController.swift in Sources */,
 				F5EFB9131BC6617600F41640 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

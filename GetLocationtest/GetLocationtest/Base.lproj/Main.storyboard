@@ -72,7 +72,7 @@
                     <view key="view" contentMode="scaleToFill" id="GO7-SV-mvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1235" y="727"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="MGS-6i-eYt">
             <objects>
-                <viewController id="aQc-xl-DSe" sceneMemberID="viewController">
+                <viewController id="aQc-xl-DSe" customClass="SettingsViewController" customModule="E_vade" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h9a-OJ-2HF"/>
                         <viewControllerLayoutGuide type="bottom" id="Btn-3I-BKF"/>
@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Fts-iK-f8L"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="Fts-iK-f8L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m29-ec-GPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

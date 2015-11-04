@@ -14,10 +14,16 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     @IBOutlet weak var mkvLocations: MKMapView!
     
     private var timer: NSTimer!
-    private var followpointer = false
     private var myAnnotation: CustomAnnotation!
     private var locationManager = CLLocationManager()
-    private let regionRadius: CLLocationDistance = 500
+    
+    private var regionRadius: CLLocationDistance = 50
+    private var acuracy:Double = 5
+    private var pressurerate:Double = 0.5
+    private var autorefreshtime:Double = 30
+    private var minDistance:Double = 10
+    private var maxDistance:Double = 20
+    private var followpointer = false
     
     private var initialLocation = CLLocation(
         latitude: 51.4365957,
@@ -26,13 +32,13 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     override func viewDidLoad() {
         super.viewDidLoad()
         initLocationManager()
-        timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "createNotification", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(autorefreshtime, target: self, selector: "createNotification", userInfo: nil, repeats: true)
         self.myAnnotation = CustomAnnotation(coordinate: CLLocationCoordinate2D(latitude: 51.4365957,longitude: 5.4780014),
-            title: "Check", fbUserId: FbMe.ownFbId)
+            title: "Me", fbUserId: FbMe.ownFbId)
         self.myAnnotation.getDataFromParse()
         
         let lpgr = UILongPressGestureRecognizer(target: self, action:"handleLongPress:")
-        lpgr.minimumPressDuration = 0.5
+        lpgr.minimumPressDuration = pressurerate
         lpgr.delaysTouchesBegan = true
         lpgr.delegate = self
         
@@ -75,7 +81,7 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         }
         
         self.myAnnotation.calculateDistance(coord)
-        if(self.myAnnotation.getDistance() > 5){
+        if(self.myAnnotation.getDistance() > acuracy){
             defaultAnnotations()
             refresh()
             self.myAnnotation.setDataToParse()
@@ -221,10 +227,10 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
                     ca.getDataFromParse()
                 }
                 ca.calculateDistance(self.mkvLocations.userLocation.coordinate)
-                if(ca.getDistance() < 10){
+                if(ca.getDistance() < minDistance){
                     distanceAnnotationShort.append(ca.title!)
                 }
-                else if (ca.getDistance() > 10 && ca.getDistance() <= 20){
+                else if (ca.getDistance() > minDistance && ca.getDistance() <= maxDistance){
                     distanceAnnotationLong.append(ca.title!)
                 }
             }
@@ -243,17 +249,17 @@ class RadarViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             dateComp.minute = calendar.component(.Minute, fromDate: date) + 1
             
             if(distanceAnnotationShort.count > 0){
-                setNotification(dateComp, message: createNotificationString(distanceAnnotationShort, distance: 10))
+                setNotification(dateComp, message: createNotificationString(distanceAnnotationShort, distance: minDistance))
             }
             if(distanceAnnotationLong.count > 0){
-                setNotification(dateComp, message: createNotificationString(distanceAnnotationLong, distance: 20))
+                setNotification(dateComp, message: createNotificationString(distanceAnnotationLong, distance: maxDistance))
             }
             distanceAnnotationShort.removeAll()
             distanceAnnotationLong.removeAll()
             
         }
     }
-    func createNotificationString(strArr: [String], distance: Int) -> String{
+    func createNotificationString(strArr: [String], distance: Double) -> String{
         var message: String = ""
         var i: Int = 1
         for item in strArr{
